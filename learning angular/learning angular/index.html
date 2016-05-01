@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html data-ng-app="myModuleName">
+<head>
+    <title>Learning Angular</title>
+    <link rel="stylesheet" type="text/css" href="/styles/base.css">
+	<meta charset="utf-8" />
+</head>
+<body class="container">
+    <h1>Learning Angular</h1>
+    <div id="/leason-1" class="container">
+        <h3>Basic Data Binding</h3>
+        Name:
+        <br />
+        <input type="text" data-ng-model="name" /> {{ name }}
+    </div>
+    <div id="/leason-2" class="container" data-ng-init="names=['Dave','Napur','Heedy','Shriva']">
+        <h3>Looping with the ng-repeat Directive</h3>
+        <ul>
+            <li data-ng-repeat="person in names"> {{ person }}</li>
+        </ul>
+    </div>
+    <div id="/leason-3" class="container" data-ng-init="customers=[{name:'Dave',city:'New York'},{name:'Napur',city:'San Francisco'},{name:'Heedy',city:'Austin'},{name:'Shriva',city:'Colorado Springs'}]">
+        <h3>Filters and OrderBys</h3>
+        Name:
+        <br />
+        <input type="text" data-ng-model="name" /> {{ name }}
+        <br />
+        <ul>
+            <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'"> {{ cust.name | uppercase }}  - {{ cust.city | lowercase }}
+            </li>
+        </ul>
+    </div>
+    <div id="/leason-4" class="container" data-ng-controller="SimpleController">
+        <h3>$scope and Controller</h3>
+        <input type="text" data-ng-model="name" /> {{ name }}
+        <br />
+        <ul>
+            <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">
+                {{ cust.name | uppercase }}  - {{ cust.city | lowercase }}
+            </li>
+        </ul>
+    </div>
+    <div id="/leason-5" class="container">
+        <h3>data-ng-view</h3>
+        <div ng-view class="viewDiv"></div>
+    </div>
+    <a href="#/view1">view1</a>
+    <a href="#/view2">view2</a>
+    <script src="/scripts/angular.min.js"></script>
+    <script src="/scripts/angular-route.js"></script>
+    <script src="/scripts/myJava.js"></script>
+</body>
+</html>

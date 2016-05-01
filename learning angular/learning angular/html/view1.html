@@ -1,0 +1,27 @@
+﻿<div class="container1">
+    <h4>Learning Angular - view 1</h4>
+    object type <br />
+    <input type="text" data-ng-model="object_type" /> <br />
+    auth key<br />
+    <input type="text" data-ng-model="auth_key" /><br />
+    board id <br />
+    <input type="text" data-ng-model="board_id" /><br />
+    method <br />
+    <input type="text" data-ng-model="method" /><br />
+    <button ng-click="fetch()">fetch</button><br />
+    <table id="results" class="results">
+        <tr data-ng-repeat="object in data">
+            <td>{{ object.column_values[0].name }}</td>
+            <td>{{ object.column_values[1].value.name }}</td>
+            <td>{{ object.column_values[2].value.name }}</td>
+            <td>{{ object.column_values[4].value }}</td>
+            <td>{{ object.column_values[5].value }}</td>
+            <td>{{ object.column_values[6].value }}</td>
+            <td>{{ object.column_values[7].value }}</td>
+            <td>{{ object.column_values[8].value }}</td>
+
+            <td data-ng-repeat="column_values in object.column_values[0].">{{ column_values.value.name }}</td>
+        </tr>
+    </table>
+
+</div>

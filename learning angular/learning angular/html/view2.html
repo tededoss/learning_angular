@@ -1,0 +1,17 @@
+﻿<div class="container2">
+    <h4>Learning Angular - view 2</h4>
+
+    <h3>$scope and Controller</h3>
+    <input type="text" data-ng-model="name" /> {{ name }}
+    <br />
+    <ul>
+        <li data-ng-repeat="cust in customers | filter:name | orderBy:'city'">
+            {{ cust.name | uppercase }}  - {{ cust.city | lowercase }}
+        </li>
+    </ul>
+    <br />
+    Customer Name: <input type="text" data-ng-model="newCustomer.name" /> {{ newCustomer.name }}
+    <br />
+    Customer City: <input type="text" data-ng-model="newCustomer.city" /> {{ newCustomer.city }}
+    <button data-ng-click="addCustomer()">Add Customer</button>
+</div>
